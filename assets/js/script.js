@@ -13,17 +13,23 @@ async function getCoins(){
                     <option value="3">${data.bitcoin.nombre}</option>
                     
         ` 
-         console.log(CoinSelector)
-
          const selectCoin =
          document.querySelector(".CoinSelector")
          selectCoin.innerHTML = CoinSelector
     } catch (e) {
         alert(e.message);
     }
-    
-    
-    
 }
 
 getCoins()
+function Calcular() {
+    //var inputNumber = document.getElementById("inputNumber")
+
+    let CoinResult = ''
+        CoinResult += `
+        <h5 class="card-text m-3">Resultado:</h5>
+        ` 
+         const CoinOP =
+         document.querySelector(".CoinResult")
+         CoinOP.innerHTML = CoinResult
+}
