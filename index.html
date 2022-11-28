@@ -13,8 +13,30 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    
+<body class="bg-dark">
+    <div class="p-4">
+        <div class="card text-center text-white bg-grey" style="width: 18rem;">
+            <div class="card-body">
+              <h3 class="card-title">Pesos CLP</h3>
+              <div class="input-control mb-3 d-flex">
+                <input type="text" class="form-control r-5" placeholder="Ingrese el monto en CLP" id="nuevaActividad">
+                
+            </div>
+              <p class="card-text">Moneda a convertir:</p>
+              <div class="input-group mb-3">
+                
+                <select class="form-select CoinSelector" aria-label="Default select example">
+                    <option selected>Seleccione moneda</option>
+                    
+                  </select>
+              </div>
+              <a href="#" class="btn btn-info text-white w-100" onclick="Calcular()">Buscar</a>
+            </div>
+          </div>
+        
+        
+        
+    </div>
 </body>
 <script type="text/javascript" src="./assets/js/script.js"></script>
 </html>
