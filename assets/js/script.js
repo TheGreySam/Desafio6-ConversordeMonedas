@@ -36,7 +36,7 @@ function Calcular() {
 
     let CoinResult = ''
         CoinResult += `
-        <h5 class="card-text m-3">Resultado:$${total}</h5>
+        <h5 class="card-text m-3">Resultado: $ ${total}</h5>
         ` 
          const CoinOP =
          document.querySelector(".CoinResult")
