@@ -31,13 +31,13 @@
                   <div class="input-group mb-3">
                     
                     <select class="form-select CoinSelector" id="Coins" aria-label="Default select example">
-                        <option selected>Seleccione moneda</option>
-                        
+                        <option selected id="selected">Seleccione moneda</option>
                         
                       </select>
                   </div>
                   <a href="#" class="btn btn-info text-white w-100" onclick="Calcular()">Buscar</a>
                   <div class="CoinResult"></div>
+                  <canvas id="myChart"></canvas>
                 </div>
               </div>
         </div>
@@ -47,4 +47,5 @@
     </div>
 </body>
 <script type="text/javascript" src="./assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </html>
