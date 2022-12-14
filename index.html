@@ -21,23 +21,24 @@
         <hr>
         <div class="align-self-center ">
             <div class="card mx-5 text-center text-white bg-grey">
-                <div class="card-body">
-                  <h3 class="card-title">Pesos CLP</h3>
+                <div class="card-body" id="CoinForm">
+                <p class="card-text">Ingrese el monto en CLP</p>
                   <div class="input-control mb-3 d-flex">
-                    <input type="text" class="form-control r-5" placeholder="Ingrese el monto en CLP" id="inputNumber">
-                    
+                    <input type="number" class="form-control r-5" id="inputNumber" value="1">
                 </div>
                   <p class="card-text">Moneda a convertir:</p>
                   <div class="input-group mb-3">
-                    
                     <select class="form-select CoinSelector" id="Coins" aria-label="Default select example">
-                        <option selected id="selected">Seleccione moneda</option>
-                        
+                        <option selected hidden value="">Seleccione moneda</option>
+                         <option value="dolar">Dolar</option>
+                         <option value="euro">Euro</option>
+                         <option value="bitcoin">Bitcoin</option>
                       </select>
                   </div>
-                  <a href="#" class="btn btn-info text-white w-100" onclick="Calcular()">Buscar</a>
-                  <div class="CoinResult"></div>
-                  <canvas id="myChart"></canvas>
+                  <button class="btn btn-info text-white w-100" onclick="getCoins()">Calcular</button>
+                  <!--a href="#" class="btn btn-info text-white w-100" onclick="Calcular()">Buscar</a-->
+                  <div id="CoinResult"></div>
+                  <!--canvas id="myChart"></canvas-->
                 </div>
               </div>
         </div>
@@ -47,5 +48,5 @@
     </div>
 </body>
 <script type="text/javascript" src="./assets/js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--script src="https://cdn.jsdelivr.net/npm/chart.js"></script-->
 </html>
