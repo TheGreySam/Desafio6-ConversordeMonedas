@@ -6,6 +6,7 @@ const CoinResult = document.querySelector("#CoinResult");
 CoinForm.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log("submit");
+    getCoins;
 });
 async function getCoins() {
     try {
