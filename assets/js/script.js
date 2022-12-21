@@ -3,10 +3,10 @@ const inputNumber = document.querySelector("#inputNumber");
 const selectedItem = document.querySelector("#Coins");
 const CoinResult = document.querySelector("#CoinResult");
 
-// CoinForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     console.log("submit");
-// });
+CoinForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("submit");
+});
 async function getCoins() {
     try {
         const res = await fetch("https://mindicador.cl/api", {
