@@ -9,18 +9,29 @@ const CoinResult = document.querySelector("#CoinResult");
 // });
 async function getCoins() {
     try {
-        const res = await fetch("https://mindicador.cl/api");
+        const res = await fetch("https://mindicador.cl/api", {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+            },
+        });
+
         const data = await res.json();
         console.log(inputNumber.value);
         console.log(selectedItem.value);
         console.log(data[selectedItem.value]);
         console.log(data[selectedItem.value].valor);
-        
-        CoinResult.innerHTML = 
-        `<h5 class="card-text m-3">Resultado: </h5>
+
+        CoinResult.innerHTML =
+            `<h5 class="card-text m-3">Resultado: </h5>
         <h3 class="m-3">$ ${inputNumber.value / data[selectedItem.value].valor} ${data[selectedItem.value].nombre}<h3>`;
 
-        const resB = await fetch(`https://mindicador.cl/api/${data[selectedItem.value].codigo}`);
+        const resB = await fetch(`https://mindicador.cl/api/${data[selectedItem.value].codigo}`, {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+            },
+        });
         const dataB = await resB.json();
         let labelsData = [];
         let dataPrice = [];
@@ -36,24 +47,24 @@ async function getCoins() {
         new Chart(document.getElementById("line-chart"), {
             type: 'line',
             data: {
-              labels: labelsData.reverse(),
-              datasets: [{ 
-                  data: dataPrice.reverse(),
-                  label: `${dataB.nombre} - Historial`,
-                  borderColor: "#3e95cd",
-                  fill: true
+                labels: labelsData.reverse(),
+                datasets: [{
+                    data: dataPrice.reverse(),
+                    label: `${dataB.nombre} - Historial`,
+                    borderColor: "#3e95cd",
+                    fill: true
                 }
-              ]
+                ]
             },
             options: {
-              title: {
-                display: false,
-                text: 'World population per region (in millions)'
-              }
+                title: {
+                    display: false,
+                    text: 'World population per region (in millions)'
+                }
             }
-          });
+        });
     } catch (e) {
         alert(e.message);
     }
-  
+
 };
